@@ -1,0 +1,157 @@
+  *,
+  *::before,
+  *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  button,
+  input {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 20px 0px;
+    width: fit-content;
+  }
+
+  TD,
+  TH {
+    padding: 20px;
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  TH {
+    background: #b0e0e6;
+  }
+
+  #array_size {
+    text-align: center;
+  }
+
+  #array_place {
+    display: flex;
+    justify-content: center;
+  }
+
+  .array-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .array-block__btn {
+    margin: 10px 0px;
+  }
+
+  .array-block__alert_visible {
+    display: block;
+  }
+
+  .array-block__alert_unvisible {
+    display: none;
+  }
+
+  .array-block__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: inherit;
+  }
+
+
+  .array-block__table {
+    width: fit-content;
+  }
+
+  .range-slider {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 90%;
+  }
+
+  .range-slider__nodes {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .range-slider__slider {
+    margin: 10px 0px;
+  }
+
+  .jumbotron {
+    margin-top: 2rem;
+  }
+
+  .array-block__arrays {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .array_wrap {
+    text-align: center;
+  }
+
+  .array-block__arrays_prev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  [data-tooltip] {
+    position: relative;
+  }
+
+  [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    width: max-content;
+    left: 0;
+    top: 0;
+    background: #3989c9;
+    color: #fff;
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s;
+    z-index: 50;
+  }
+
+  [data-tooltip]:hover::after {
+    opacity: 1;
+    top: 2em;
+  }
+
+  @media (max-width: 1000px) {
+    .array_wrap {
+      overflow-x: scroll;
+    }
+  }
