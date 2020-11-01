@@ -39,7 +39,7 @@ const createResultTable = (array, colorsArray = null, calcArr = null) => {
                 if(calcArr[i][j] == "") { 
                     cell.setAttribute('data-tooltip', "Ничего не поменялось");
                 } else
-                cell.setAttribute('data-tooltip', `${calcArr[i][j][1]}, увеличилось на ${ (array[i][j] - calcArr[i][j][0]) / calcArr[i][j][0] * 100}%` );
+                cell.setAttribute('data-tooltip', `${calcArr[i][j][1]}, увеличилось на ${ ((array[i][j] - calcArr[i][j][0]) / calcArr[i][j][0] * 100) || '0'}%` );
             }
             cell.textContent = array[i][j];
             row.appendChild(cell);
@@ -294,8 +294,8 @@ const showPreviousSolves = () => {
     solves.forEach(el => {
 
         let hr = document.createElement('hr');
-        hr.size = '1000';
-        hr.color = 'black';
+        hr.style.size = '1000';
+        hr.style.color = 'black';
         hr.style.width = '150px';
         let table = createResultTable(el.tableInfo);
         prevArraysPlaceAfter.appendChild(table);
